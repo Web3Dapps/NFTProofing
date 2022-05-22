@@ -1,0 +1,27 @@
+  <div class="home with-title " style="padding: 10rem" *ngIf="!showCharacterSheet">
+    <div class="nes-container is-centered">
+      <div *ngIf="!isLoggedIn">
+        <h2>Enter the Dungeon</h2>
+        <h3>Using Moralis and Metamask</h3>
+        <section style="padding: 2rem">
+          <button  class="nes-btn" color="primary" (click)="login()">Login with Metamask</button>
+          <br><br>
+          <button class="nes-btn" (click)="login('walletconnect')">
+            Login with WalletConnect
+          </button>
+        </section>
+      </div>
+      <div *ngIf="isLoggedIn" >
+        <h2> Welcome: </h2>
+        <h2> {{ username }}</h2>
+        <h2> Your account dir is :</h2>
+        <h2> {{ ethAddress }} </h2>
+        <h1>Last Login:</h1>
+        <h2> {{lastLogin}}</h2>
+          <button  class="nes-btn"  [routerLink]="['/profile']" (click)="goToAdventure">Go to my nfts </button>
+<br><br>
+          <h3 class="nes-btn is-error" (click)="logout()"> log out </h3>
+      </div>
+    </div>
+  </div>
+

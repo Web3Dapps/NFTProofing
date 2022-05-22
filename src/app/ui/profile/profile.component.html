@@ -1,0 +1,33 @@
+<div class="profile nes-container with-title is-centered">
+    <div class="rpgui-container framed rpgui-center">
+    <h1>Your Profile</h1>
+    <p>Update Manage and Change everything related to your account.</p>
+        <h3 [routerLink]="['/home']"> go home</h3>
+    <hr>
+
+
+
+    <div>
+        <h1>Your NFTS</h1>
+        <div class=" framed rpgui-center">
+            <h2>Display your NFT's</h2>
+            <button  class="nes-btn" color="primary"  (click)="getNfts('matic')">On Polygon </button>
+            <br><br>
+            <button  class="nes-btn" color="primary"  (click)="getNfts('eth')">On Eth </button>
+            <br><br>
+
+            <h2 *ngIf="nftsList.length == 0">You dont have any on this chain</h2>
+            <h2 *ngIf="nftsList.length > 0"> You have this:</h2>
+
+            <div *ngFor="let nft of nftsList" class="nes-container is-dark with-title">
+                <p class="title">{{ nft.name }}</p>
+                <button  class="nes-btn" color="primary" (click)="getNFT(nft)">See More </button>
+                {{ nft.symbol }}
+                {{ nft.name }}
+            </div>
+            <br><br>
+        </div>
+    </div>
+
+</div>
+</div>

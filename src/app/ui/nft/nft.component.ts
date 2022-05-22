@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router'; // import router from angular router
 
 @Component({
   selector: 'app-nft',
@@ -8,12 +7,9 @@ import {Router} from '@angular/router'; // import router from angular router
 })
 export class NftComponent implements OnInit {
 
-  constructor( private route:Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe( (param.) => {
-      let data = params.by;
-    })
   }
 
 }

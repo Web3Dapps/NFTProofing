@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
     }
 
     getNFT(data: any) {
-        this.route.navigate(['/nfts', data?.symbol], {queryParams: {data: data}});
+        this.route.navigate(['/nfts', data?.symbol]);
         console.log(data);
     }
 
